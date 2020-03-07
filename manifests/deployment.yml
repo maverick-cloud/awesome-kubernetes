@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "mavrick"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "mavrick"
+    spec:
+      containers:
+        - name: "mavrick"
+          image: "shadgunya.azurecr.io/mavrick"
+          ports:
+          - containerPort: 80
